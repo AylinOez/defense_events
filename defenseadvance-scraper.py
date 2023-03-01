@@ -20,13 +20,16 @@ for page in range(1,3):
         #create dict for each event
         event_data = {}
         
-        event_data['event_name'] = box.find('span', {'class': 'product-box-heading'}).text.split()
-        event_data['event_day'] = box.find('span', {'class': 'wenibar-day'}).text.split()
-        event_data['event_month'] = box.find('span', {'class': 'webinar-month'}).text.split()
-        event_data['event_duration'] = box.find('span', {'class': 'event_date'}).text.split()
-        event_data['event_location'] = box.find('span', {'class': 'event_country'}).text.split()
+        event_data['event_name'] = box.find('span', {'product-card-heading'}).text.strip()
+        event_data['event_day'] = box.find('span', {'class': 'webinar-day'}).text.strip()
+        event_data['event_month'] = box.find('span', {'class': 'webinar-month'}).text.strip()
+        event_data['event_duration'] = box.find('span', {'class': 'event-date'}).text.strip()
+        event_data['event_location'] = box.find('span', {'class': 'event-country'}).text.strip()
         event_data['event_link'] = box.find('a')['href']
 
         events.append(event_data)
 
 print(events)
+
+
+
