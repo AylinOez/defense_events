@@ -26,3 +26,7 @@ for page in range(1,3):
         event_data['event_duration'] = event_box.find('span', {'class': 'event_date'}).text.split()
         event_data['event_location'] = event_box.find('span', {'class': 'event_country'}).text.split()
         event_data['event_link'] = event_box.find('a')['href']
+
+        events.append(event_data)
+
+
