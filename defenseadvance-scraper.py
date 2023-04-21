@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import mysql.connector
 
 
 #create list to store events
@@ -30,6 +31,17 @@ for page in range(1,3):
         events.append(event_data)
 
 print(events)
+
+config= {
+    'host':'127.0.0.1',
+    'user':'root',
+    'password':'+7@t8tuP9?ejAJiS+LsP',
+    'database':'defense_events',
+    'raise_on_warnings': True
+}
+connecting_db = mysql.connector.connect(**config)
+
+connecting_db.close()
 
 
 
