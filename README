@@ -1,0 +1,32 @@
+# Defense Events Scraper
+
+This is a Python webscraper, that scrapes the [Defense Advancement website](https://www.defenseadvancement.com/events/) for upcoming defense events and stores the event data in a MySQL database.
+
+## Getting Started
+
+### Prerequisites
+
+To run this script, you'll need to have the following installed on your system:
+
+- Python 3.x
+- MySQL server
+- Beautifulsoup
+- requests library
+
+### Installation
+
+1. Clone or download this repository to your local computer.
+2. Install the necessary packages by running this command in the terminal: `pip install -r requirements.txt`.
+3. Update the `config_scraper.py` file with your MySQL server details.
+
+## Usage
+
+This script can be run by opening a terminal in the project directory and running:
+
+python
+python defense_events_scraper.py
+
+
+The script will scrape the website for upcoming defense events and store the event data in a CSV file (`defenseadvance.csv`) and a MySQL database (`defense_events`).
+
+
