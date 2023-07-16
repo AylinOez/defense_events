@@ -28,11 +28,11 @@ events = event_info(event_box, name_tag, name_attribute, day_tag, day_attribute,
 print(events)
 
 
-# with open('defenseadvance.csv', 'a', newline='') as csvfile:
-#     fieldnames= ['event_name', 'event_day', 'event_month', 'event_location', 'event_link']
+with open('defenseadvance.csv', 'a', newline='') as csvfile:
+    fieldnames= ['event_name', 'event_day', 'event_month', 'event_location', 'event_link']
     
-#     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-#     writer.writeheader()
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
 
-#     for row in events:
-#         writer.writerow(row)
+    for row in events:
+        writer.writerow(row)
