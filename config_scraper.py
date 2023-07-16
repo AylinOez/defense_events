@@ -1,44 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
 
-# def making_soup(url, page_tag, page_attribute, max_pages=10):
-#     """
-#     Creates soup, then selects page numbers and the last element,
-#     check for multiple websites and then loops over them and
-#     creating a new Beautifulsoup object with data from all pages
-    
-#     Parameters:
-#         url (str): The URL of the website to scrape.
-#         page_tag (str): The HTML tag of the page numbers.
-#         page_attribute (str): The attribute of the page tag.
-#         max_pages (int): The maximum number of pages to scrape. Default is 10.
-    
-#     Returns:
-#         soup (BeautifulSoup): A BeautifulSoup object containing the HTML content of all the scraped pages.
-#     """
-#     response = requests.get(url)
-#     start_soup = BeautifulSoup(response.content, 'html.parser')
-#     page_links= start_soup.find(page_tag, class_ = page_attribute ).find_all('a')[-2].text
-# #+ '> a'
-#     if page_links:
-#         total_pages = int(page_links)
-#     else:
-#         total_pages = max_pages
-
-#     soup_list = []
-
-#     for page in range(1, total_pages+1):
-#         url_page= f'{url}/page/{page}/'
-#         response= requests.get(url_page, allow_redirects=False)
-#         soup_page= BeautifulSoup(response.content, 'html.parser')
-#         soup_list.append(soup_page)
-
-#     soup = BeautifulSoup('\n'.join([str(s) for s in soup_list]), 'html.parser')
-#     print(soup)
-#     return soup
-
 def making_soup(url):
-     #url = url
+     """
+     Creates soup, then selects page numbers and the last element,
+     check for multiple websites and then loops over them and
+     creating a new Beautifulsoup object with data from all pages
+  
+     Parameters:
+        url (str): The URL of the website to scrape.
+        page_tag (str): The HTML tag of the page numbers.
+        page_attribute (str): The attribute of the page tag.
+        max_pages (int): The maximum number of pages to scrape. Default is 10.
+  
+     Returns:
+        soup (BeautifulSoup): A BeautifulSoup object containing the HTML content of all the scraped pages.
+     """
      response = requests.get(url)
      soup = BeautifulSoup(response.content, 'html.parser')
      return soup
