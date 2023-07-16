@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 
 
 url = 'https://www.defenseadvancement.com/events/'
-response = requests.get(url)
-soup = BeautifulSoup(response.content, 'html.parser')
+#response = requests.get(url)
+#soup = BeautifulSoup(response.content, 'html.parser')
 #page_class = 'page-numbers'
 
-#soup = making_soup(url)
+soup = making_soup(url)
 tag_name = day_tag = month_tag = location_tag = name_tag = 'span'
 class_name = 'product-box-details'
 

@@ -37,11 +37,11 @@ from bs4 import BeautifulSoup
 #     print(soup)
 #     return soup
 
-# def making_soup(url):
-#     #url = url
-#     response = requests.get(url)
-#     soup = BeautifulSoup(response.content, 'html.parser')
-#     return soup
+def making_soup(url):
+     #url = url
+     response = requests.get(url)
+     soup = BeautifulSoup(response.content, 'html.parser')
+     return soup
     
 def find_event_box(soup, tag_name, class_name):
     """
