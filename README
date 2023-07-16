@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/LuginaAylinOezdemir/defense_events.svg?token=eVdBrmhDAmPw1ocPQDdJ&branch=master)](https://app.travis-ci.com/LuginaAylinOezdemir/defense_events)
+
 # Defense Events Scraper
 
 This is a Python webscraper, that scrapes the [Defense Advancement website](https://www.defenseadvancement.com/events/) for upcoming defense events and stores the event data in a MySQL database.
@@ -30,5 +32,4 @@ python defense_events_scraper.py
 The script will scrape the website for upcoming defense events and store the event data in a CSV file (`defenseadvance.csv`) and a MySQL database (`defense_events`).
 
 
-[![Build Status](https://app.travis-ci.com/LuginaAylinOezdemir/defense_events.svg?token=eVdBrmhDAmPw1ocPQDdJ&branch=master)](https://app.travis-ci.com/LuginaAylinOezdemir/defense_events)
 
