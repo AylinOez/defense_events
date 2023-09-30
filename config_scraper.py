@@ -1,24 +1,43 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def making_soup(url):
      """
-     Creates soup, then selects page numbers and the last element,
-     check for multiple websites and then loops over them and
-     creating a new Beautifulsoup object with data from all pages
-  
+     Creates soup, writes it to a file, and returns it.
+     
+     Args:
+        url (str): The URL to parse.
+     
      Parameters:
         url (str): The URL of the website to scrape.
-        page_tag (str): The HTML tag of the page numbers.
-        page_attribute (str): The attribute of the page tag.
-        max_pages (int): The maximum number of pages to scrape. Default is 10.
-  
+          
      Returns:
         soup (BeautifulSoup): A BeautifulSoup object containing the HTML content of all the scraped pages.
-     """
+        file (file): A file containing the HTML content of all the scraped pages.
+    """
      response = requests.get(url)
      soup = BeautifulSoup(response.content, 'html.parser')
-     return soup
+     
+     def website_name(url):
+         """Returns the domain of the given URL."""
+         pattern = r"www\.(.*?)\.com"
+         match = re.search(pattern, url)
+         if match:
+             return match.group(1)
+         else:
+             return None
+     domain = website_name(url)
+     
+     website_name(url)
+
+         # Open a file in write mode
+     with open(f'{domain}.html', 'w') as file:
+         file.write(soup.prettify())
+         # Close the file
+         file.close()
+         
+     return soup, file
     
 def find_event_box(soup, tag_name, class_name):
     """
