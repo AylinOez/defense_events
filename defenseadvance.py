@@ -12,7 +12,7 @@ url = 'https://www.defenseadvancement.com/events/'
 #page_class = 'page-numbers'
 
 soup = making_soup(url)
-
+control_defenseadvance = soup.prettify()
 
 
 tag_name = day_tag = month_tag = location_tag = name_tag = 'span'

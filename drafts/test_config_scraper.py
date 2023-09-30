@@ -1,5 +1,8 @@
 import pytest
 from config_scraper import *
+import unittest
+from defenseadvance import *
+
 
 def test_making_soup():
     """
@@ -16,7 +19,10 @@ def test_making_soup():
     soup = BeautifulSoup(response.content, 'html.parser')
     assert soup == making_soup(url)
     
-    
+class TestDefenseAdvanceSoup(unittest.TestCase):
+    def test_soup(self):
+        self.assertEqual(control_defenseadvance == soup.prettify(), True)
+        
 def test_find_event_box():
     """
     Tests the functionality of find_event_box function.

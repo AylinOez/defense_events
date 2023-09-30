@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+
+
 def making_soup(url):
      """
      Creates soup, writes it to a file, and returns it.
@@ -18,26 +20,10 @@ def making_soup(url):
     """
      response = requests.get(url)
      soup = BeautifulSoup(response.content, 'html.parser')
-     
-     def website_name(url):
-         """Returns the domain of the given URL."""
-         pattern = r"www\.(.*?)\.com"
-         match = re.search(pattern, url)
-         if match:
-             return match.group(1)
-         else:
-             return None
-     domain = website_name(url)
-     
-     website_name(url)
-
-         # Open a file in write mode
-     with open(f'{domain}.html', 'w') as file:
-         file.write(soup.prettify())
-         # Close the file
-         file.close()
          
-     return soup, file
+     return soup
+
+
     
 def find_event_box(soup, tag_name, class_name):
     """

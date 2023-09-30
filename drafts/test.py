@@ -14,7 +14,8 @@ for page in range(1,3):
     
 class TestDefenseAdvanceSoup(unittest.TestCase):
     def test_soup(self):
-        self.assertEqual(test_soup == soup.prettify(), True)
+        self.assertEqual(control_defenseadvance == soup.prettify(), True)
+        
 
     event_box = find_event_box(soup, 'span', {'class': 'product-box-details'})
 
