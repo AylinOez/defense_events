@@ -12,6 +12,7 @@ url = 'https://www.defenseadvancement.com/events/'
 #page_class = 'page-numbers'
 
 soup = making_soup(url)
+test_soup = print(soup.prettify())
 tag_name = day_tag = month_tag = location_tag = name_tag = 'span'
 class_name = 'product-box-details'
 
@@ -36,3 +37,4 @@ with open('defenseadvance.csv', 'a', newline='') as csvfile:
 
     for row in events:
         writer.writerow(row)
+        
